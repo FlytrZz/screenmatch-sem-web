@@ -1,12 +1,18 @@
 package principal;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 import model.DadosEpisodio;
 import model.DadosSerie;
 import model.DadosTemporada;
+import model.Episódio;
 import services.ConsumoAPI;
 import services.converteDados;
 
@@ -40,6 +46,27 @@ public class Principal {
 		
 		temporadas.forEach(t -> t.episodios().forEach(e -> System.out.println(e.titulo())));
 		temporadas.forEach(System.out::println);
-	}
-
+		
+		/*List<String> nomes = Arrays.asList("Jacque","Yasmin","Rodrigo","Paulo","Nico");
+		nomes.stream().sorted().limit(3).filter(f -> f.startsWith("N")).map(n -> n.toUpperCase()).forEach(System.out::println);*/
+		
+		List<DadosEpisodio> dadosepisodios = temporadas.stream().flatMap(t -> t.episodios().stream()).collect(Collectors.toList());
+		
+		/*System.out.println("\nTop 5 Episódios:");
+		dadosepisodios.stream().filter(f -> !f.avaliação().equalsIgnoreCase("N/A")).sorted(Comparator.comparing(DadosEpisodio::avaliação).reversed()).limit(5).forEach(System.out::println);*/
+		
+		List<Episódio> episodios = temporadas.stream().flatMap(t -> t.episodios().stream()).map(d -> new Episódio(d.numero(),d)).collect(Collectors.toList());
+		episodios.forEach(System.out::println);
+		
+		System.out.println("A partir de que ano você deseja ver os episódios?");
+		var ano = input.nextInt();
+		input.nextLine();
+		
+		LocalDate dataBusca = LocalDate.of(ano, 1, 1);
+		DateTimeFormatter formatador = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		
+		episodios.stream().filter(f -> f.getDataDeLançamento()!=null && f.getDataDeLançamento().isAfter(dataBusca)).forEach(e -> System.out.println("Temporada: "+e.getTemporada()+
+				" Episódio: "+e.getTitulo()+
+				" Data: "+e.getDataDeLançamento().format(formatador)));
 }
+	}
