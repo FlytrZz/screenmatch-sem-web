@@ -1,9 +1,9 @@
-🎬 Screenmatch (Sem Web)
+# 🎬 Screenmatch (Sem Web)
 ##
 Projeto desenvolvido em Java com Spring Boot para praticar consumo de APIs, manipulação de dados com Streams e uso de programação funcional (lambdas).
 ##
 ##
-🚀 Objetivo do projeto:
+# 🚀 Objetivo do projeto:
 ##
 O objetivo deste projeto é simular uma aplicação backend que:
 
@@ -16,7 +16,7 @@ O objetivo deste projeto é simular uma aplicação backend que:
 - Aplica conceitos de Spring Boot em uma aplicação console
 ##
 ##
-🛠️ Tecnologias utilizadas:
+# 🛠️ Tecnologias utilizadas:
 ##
 - Java
 
@@ -32,7 +32,7 @@ O objetivo deste projeto é simular uma aplicação backend que:
 
 - Consumo de API REST de filmes/séries
 ##
-📁 Estrutura do projeto:
+# 📁 Estrutura do projeto:
 ##
 src/
 
@@ -47,7 +47,7 @@ src/
  │    └── ScreenmatchApplication.java
  ##
  ##
-⚙️ Como executar o projeto:
+# ⚙️ Como executar o projeto:
 ##
 1. Clonar o repositório
 git clone https://github.com/FlytrZz/screenmatch-sem-web.git
@@ -60,7 +60,7 @@ e rodar a classe principal:
 ScreenmatchApplication.java
 ##
 ##
-📊 Funcionalidades:
+# 📊 Funcionalidades:
 - Busca de séries e filmes via API
 - Filtragem de dados com Streams
 - Manipulação de listas de temporadas e episódios
@@ -68,7 +68,7 @@ ScreenmatchApplication.java
 - Menu interativo via console
 ##
 ##
-💡 Aprendizados
+# 💡 Aprendizados
 ##
 Com esse projeto foi possível praticar:
 
@@ -79,12 +79,12 @@ Com esse projeto foi possível praticar:
 - Conversão de JSON para objetos Java
 ##
 ##
-📌 Status do projeto
+# 📌 Status do projeto
 ##
 ✔ Em desenvolvimento para fins educacionais
 ✔ Baseado em exercícios e cursos da Alura
 ##
 ##
-👨‍💻 Autor
+# 👨‍💻 Autor
 ##
 Desenvolvido por [FlytrZz]
